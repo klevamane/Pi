@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, request, Response
 import json
+from settings import *
+from BookModel import *
 
 def validBookObject(bookObject):
     if ("name" in bookObject and "price" in bookObject and "isbn" in bookObject):
@@ -25,9 +27,6 @@ def checkBookToEdit(bookObject):
     else:
         return False
 
-# this is needed so that flask knows where to check for
-# static files, templates, packages etc
-app = Flask(__name__)
 print(__name__)
 
 #GET books
